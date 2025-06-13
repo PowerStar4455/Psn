@@ -1,0 +1,153 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <title>رجسٹریشن فارم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Noto Nastaliq Urdu', sans-serif;
+      direction: rtl;
+      text-align: right;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7fa, #fffde7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 15px;
+      max-width: 600px;
+      color: #444;
+      font-size: 16px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    form {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input {
+      width: 95%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #90caf9;
+      font-size: 16px;
+      background-color: #f0f8ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(45deg, #42a5f5, #1e88e5);
+      color: white;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #1e88e5, #1565c0);
+    }
+
+    @media screen and (max-width: 480px) {
+      form, p {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>رجسٹریشن فارم</h2>
+  <img src="New.jpg" alt="PSSN Logo" width="320" height="70">
+
+  <p>
+    پاور اسٹار مارکیٹنگ ٹیم کی طرف سے اپنے آنلائن گروپس میں  میمبرز کی انٹرٹیمنٹ کے لیے ووٹنگ مقابلے کروائے جارہے ہیں ۔ جو ہر ہفتے پیر کے دن صبح 9:00 سے جمع رات 9:00 بجے تک جاری رہے گا۔ ہر ہفتے جیتنے والے میمبرز کو 1000 کا انعام دیا جائے گا۔
+
+    مقابلے کی انائونسمینٹ کے بعد میمبرز کو پول کا لنک فراہم کیا جاتا ہے جس میں وہ اپنے فرینڈز کو ووٹنگ کے لیے انوائٹ کریں گے۔
+    مقابلے کے امیدواران کے لیے یہ فارم فل کر کے سبمٹ کرنا ضروری ہے۔
+  </p>
+
+  <form id="membershipForm">
+    <label for="name">نام:</label>
+    <input type="text" id="name" placeholder="اپنا نام لکھیں" required>
+
+    <label for="number">واٹسپ نمبر:</label>
+    <input type="text" id="number" placeholder="03XXXXXXXXX" required>
+
+    <label for="city">شہر:</label>
+    <input type="text" id="city" placeholder="اپنا شہر لکھیں" required>
+
+    <button type="submit">جمع کریں</button>
+  </form>
+
+  <script>
+    document.getElementById("membershipForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const number = document.getElementById("number").value;
+      const city = document.getElementById("city").value;
+
+      alert("شکریہ! آپ کا ڈیٹا موصول ہو گیا ہے۔");
+
+      const message = `🌟 نیا فارم جمع ہوا ہے 🌟\n\n👤 نام: ${name}\n📞 نمبر: ${number}\n🏙️ شہر: ${city}`;
+      const whatsappNumber = "923423397427";
+
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappLink, '_blank');
+
+      document.getElementById("membershipForm").reset();
+    });
+  </script>
+
+</body>
+</html>
+
+
